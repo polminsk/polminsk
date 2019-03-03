@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="">
 
     <link rel="import" href="/intro.html">
-    <!--    <link rel="import" href="/import.html">-->
+    <link rel="import" href="/import.html">
 </head>
 
 <body>
@@ -85,11 +85,14 @@
         }
     </script>
 
+
     <script>
         var link = document.querySelector('link[rel=import]');
         var content = link.import.querySelector('#intro-dm');
         document.body.appendChild(content.cloneNode(true));
     </script>
+
+
 
     <script>
         var doc = document.querySelector('link[rel="import"]').import;
@@ -97,5 +100,17 @@
         var text = doc.querySelector('.doc');
         document.body.appendChild(text.cloneNode(true));
     </script>
+
+
+    <script>
+        var doc = document.querySelectorAll('link[rel="import"]');
+        for (i of doc) {
+            var cool = i.import;
+            var go = cool.querySelector('.doc');
+            document.body.appendChild(go.cloneNode(true));
+        }
+    </script>
+
+
 </body>
 </html>
