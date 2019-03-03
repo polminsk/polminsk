@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Bootstrap 4 Minimal Template</title>
+
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="apple-touch-icon" href="">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Link to your css file -->
+    <link rel="stylesheet" href="">
+
+</head>
+
+<body>
+    <!-- Start coding here -->
+
+    <h1>Hello, world!</h1>
+    <p><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/template" target="_blank"> HTML элемент template — это механизм для отложенного рендера клиентского контента, который не отображается во время загрузки, но может быть инициализирован при помощи JavaScript.</a></p>
+
+    <table class="table" id="producttable">
+        <thead>
+            <tr>
+                <td>UPC_Code</td>
+                <td>Product_Name</td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- existing data could optionally be included here -->
+        </tbody>
+    </table>
+
+    <template id="productrow">
+        <tr>
+            <td class="record"></td>
+            <td></td>
+        </tr>
+    </template>
+
+    <!-- Coding End -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+    <script>
+        // Проверяем поддерживает ли браузер тег <template>
+        // проверив наличие аттрибута content у элемента template
+        if ('content' in document.createElement('template')) {
+
+            // Instantiate the table with the existing HTML tbody and the row with the template
+            var t = document.querySelector('#productrow'),
+                td = t.content.querySelectorAll("td");
+            td[0].textContent = "1235646565";
+            td[1].textContent = "Stuff";
+
+            // клонируем новую строку и вставляем её в таблицу
+            var tb = document.getElementsByTagName("tbody");
+            var clone = document.importNode(t.content, true);
+            tb[0].appendChild(clone);
+
+            // создаём новую строку
+            td[0].textContent = "0384928528";
+            td[1].textContent = "Acme Kidney Beans";
+
+            // клонируем новую строку и вставляем её в таблицу
+            var clone2 = document.importNode(t.content, true);
+            tb[0].appendChild(clone2);
+
+        } else {
+            // необходимо найти другой способ добавить строку в таблицу т.к.
+            // тег <template> не поддерживатся браузером
+        }
+    </script>
+</body>
+</html>
