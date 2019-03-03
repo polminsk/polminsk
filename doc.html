@@ -11,6 +11,7 @@
 
     <link rel="shortcut icon" href="" type="image/x-icon">
     <link rel="apple-touch-icon" href="">
+    <link rel="import" href="/intro.html">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -80,6 +81,12 @@
             // необходимо найти другой способ добавить строку в таблицу т.к.
             // тег <template> не поддерживатся браузером
         }
+    </script>
+
+    <script>
+        var link = document.querySelector('link[rel=import]');
+        var content = link.import.querySelector('#intro-dm');
+        document.body.appendChild(content.cloneNode(true));
     </script>
 </body>
 </html>
