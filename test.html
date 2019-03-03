@@ -1,0 +1,75 @@
+<div id="app">
+    <p v-if="isMorning">Good morning!</p>
+    <p v-if="isAfternoon">Good afternoon!</p>
+    <p v-if="isEvening">Good evening!</p>
+    <p>Time {{ myDate }}</p>
+    <p>{{ seconds }} seconds have elapsed since you opened the page.</p>
+
+    <div id='vueRoot'>
+        <input type='date' v-model='myDate'>
+        <br>
+        {{myDate}}
+    </div>
+
+    <p>Hello, {{ greetee }}!</p>
+
+
+
+    <div v-if="state === 'loading'">Loading…</div>
+    <div v-else-if="state === 'error'">An error occurred</div>
+    <div v-else>…our content!</div>
+
+
+    <!--<div v-show="true">one</div>
+<div v-show="false">two</div>
+
+<h1 v-if="ok">Да</h1>
+<h1 v-else>Нет</h1>-->
+
+    <button v-on:click="visible=!visible">{{visible?'Скрыть':'Отобразить'}}</button>
+    <div v-show="visible">
+        <h2></h2>
+        <p><a href="https://metanit.com/web/vuejs/2.2.php" target="_blank">Сайт о программировании METANIT.COM</a></p>
+        <p><a href="https://ru.vuejs.org/v2/guide/instance.html" target="_blank"> Vue.js Экземпляр Vue</a></p>
+
+        <div id="example-1">
+            <button v-on:click="counter += 1">+1 = {{ counter }} </button>
+            <p>Кнопка выше была нажата {{ counter }} раз</p>
+        </div>
+        <ul>
+            <li v-for="dog in dogs">{{ dog }}</li>
+        </ul>
+        <p>The second dog is {{ dogs[1] }}</p>
+        <p>All the dogs are {{ dogs }}</p>
+
+    </div>
+
+
+
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+    var hours = new Date().getHours();
+
+    new Vue({
+        el: '#app',
+        data: {
+            isMorning: hours < 12,
+            isAfternoon: hours >= 12 && hours < 18,
+            isEvening: hours >= 18,
+            myDate: new Date().toISOString().slice(0, 10),
+            greetee: 'world',
+            seconds: 0,
+            dogs: ['Rex', 'Rover', 'Henrietta', 'Alan'],
+            counter: 0,
+            visible: true
+        },
+        created() {
+            setInterval(() => {
+                this.seconds++;
+                this.hours = new Date().getHours();
+            }, 1000);
+        }
+    });
+
+</script>
