@@ -34,7 +34,7 @@
         setInterval(getDate, 0);
     </script>
     <div id="timedisplay"></div>
-    
+
     <div id="current_date_time_block"></div>
 
     <script type="text/javascript">
@@ -63,7 +63,17 @@
         /* выводим текущую дату и время на сайт в блок с id "current_date_time_block" */
         document.getElementById('current_date_time_block').innerHTML = "Дата = " + date_time();
     </script>
-<hr>
+
+    <div id="current_date_time_block2"></div>
+
+    <script type="text/javascript">
+        /* каждую секунду получаем текущую дату и время */
+        /* и вставляем значение в блок с id "current_date_time_block2" */
+        setInterval(function() {
+            document.getElementById('current_date_time_block2').innerHTML = date_time();
+        }, 5000);
+    </script>
+    <hr>
     <div id="intro-dm">
         <h2>We're an awesome blog about web design</h2>
         <p>Designmodo is a great resource of informative material for designers and web developers. We are makers of highly-rated User Interface Packs, you can get acquainted with Designmodo shop here, and you can download a couple of other ui packs for free.</p>
