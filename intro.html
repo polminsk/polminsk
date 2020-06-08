@@ -2,68 +2,63 @@
   <html lang="en">
 
   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="Refresh" content="15" />
-      <title>Bootstrap 4 Template</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="">
-      <meta name="author" content="">
+    <meta charset="UTF-8">
+    <!--    <meta http-equiv="Refresh" content="15" />-->
+    <title>Bootstrap 4 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-      <!-- Compiled and minified CSS -->
-      <!--Import materialize.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified CSS -->
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  </head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
 
-  <body>
-      <div id="intro-dm">
-          <h2>We're an awesome blog about web design 2020</h2>
-          <p>Designmodo is a great resource of informative material for designers and web developers. We are makers of highly-rated User Interface Packs, you can get acquainted with Designmodo shop here, and you can download a couple of other ui packs for free.</p>
-          <p>GitHub разрешил пользователям бесплатно создавать приватные репозитории
-              На тарифе GitHub Free отныне доступно безлимитное количество приватных репозиториев с участием до трёх соавторов..</p>
-      </div>
-      <div id="current-date">Time</div>
+<body>
 
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-      </script>
+    <script type="text/javascript">
+        function getDate() {
+            var date = new Date();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+            //По надобности условие ниже повторить с minutes и hours
+            if (seconds < 10) {
+                seconds = '0' + seconds;
+            }
+            document.getElementById('timedisplay').innerHTML = hours + ':' + minutes + ':' + seconds;
+        }
+        setInterval(getDate, 0);
+    </script>
+    <div id="timedisplay"></div>
 
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
-      </script>
+    <div id="intro-dm">
+        <h2>We're an awesome blog about web design 2020</h2>
+        <p>Designmodo is a great resource of informative material for designers and web developers. We are makers of highly-rated User Interface Packs, you can get acquainted with Designmodo shop here, and you can download a couple of other ui packs for free.</p>
+        <p>GitHub разрешил пользователям бесплатно создавать приватные репозитории
+            На тарифе GitHub Free отныне доступно безлимитное количество приватных репозиториев с участием до трёх соавторов..</p>
+    </div>
 
-      <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
-      </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
 
-      <!--Import jQuery before materialize.js-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
+    </script>
 
-      <script>
-          setTimeout(function() {
-              location.reload();
-          }, 15000);
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
 
-      </script>
-      <script>
-//          function setPageTime() {
-              var currentDateObj = document.getElementById('current-date');
-              if (currentDateObj) {
-                  var monthList = new Array('января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля',
-                      'августа', 'сентября', 'октября', 'ноября', 'декабря');
-                  var currDate = new Date();
-                  var m = monthList[currDate.getMonth()];
-                  var s = check_zero(currDate.getDate()) + ' ' + m + ' ' + Math.round(currDate.getFullYear() % 1000) + ' ' +
-                      check_zero(currDate.getHours()) + ':' + check_zero(currDate.getMinutes()) + ':' +
-                      check_zero(currDate.getSeconds());
-                  currentDateObj.innerHTML = s;
-              }
-              setTimeout('setPageTime(1000)');
-//          }
+    <!--Import jQuery before materialize.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-      </script>
-  </body>
+    <script>
+        setTimeout(function() {
+            location.reload();
+        }, 15000);
+    </script>
 
-
-
-  </html>
+</body></html>
