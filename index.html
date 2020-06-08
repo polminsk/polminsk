@@ -23,7 +23,7 @@
 
     <button v-on:click="visible=!visible">{{visible?'Скрыть':'Отобразить'}}</button>
 
-    <div v-show="visible">
+    <div v-show="!visible">
         <h2></h2>
         <p><a href="https://metanit.com/web/vuejs/2.2.php" target="_blank">Сайт о программировании METANIT.COM</a></p>
         <p><a href="https://ru.vuejs.org/v2/guide/instance.html" target="_blank"> Vue.js Экземпляр Vue</a></p>
